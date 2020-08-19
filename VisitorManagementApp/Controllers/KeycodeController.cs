@@ -34,21 +34,13 @@ namespace VisitorManagementApp.Controllers
         // GET: Keycodes/Create
         public ActionResult Create()
         {
-            if (Session["AdminId"] != null)
-            {
-                ViewBag.AdminId = new SelectList(db.AdminTable, "AdminId", "Name");
-                return View();
-            }
-            else if (Session["StaffId"] != null)
+            if (Session["StaffId"] != null)
             {
                 ViewBag.StaffId = new SelectList(db.StaffTable, "StaffId", "Name");
                 return View();
             }
-            else
-            {
-                //You need to change this to Index method Home controller later
-                return RedirectToAction("Login", "Admin");
-            }
+            //You need to change this to Index method Home controller later
+            return RedirectToAction("Login", "Staff");
 
         }
 
@@ -66,9 +58,7 @@ namespace VisitorManagementApp.Controllers
                 ViewBag.Message = "New Keycode Successfully Registered";
             }
 
-            ViewBag.AdminId = new SelectList(db.AdminTable, "AdminId", "Name", keycode.AdminId);
             ViewBag.StaffId = new SelectList(db.StaffTable, "StaffId", "Name", keycode.StaffId);
-
             return View();
         }
 
@@ -92,15 +82,13 @@ namespace VisitorManagementApp.Controllers
                     var mykey = db.KeycodeTable.Single(k => k.Key == visitorkey.Key);
                     if (mykey != null)
                     {
-                        /*
-                         Check this out as you progress
-
-                        Session["AdminId"] = mykey.AdminId.ToString();
                         Session["StaffId"] = mykey.StaffId.ToString();
+
+                        ViewBag.Message = "Keycode is correct. Welcome to Hestia Nig. Ltd.";
+                        /*
+                         return RedirectToAction("Success");
                          */
 
-                        ViewBag.Message = "Key code is correct. Welcome to Hestia Nig. Ltd.";
-                        return RedirectToAction("Success");
                     }
                 }
                 catch (Exception)

@@ -195,10 +195,13 @@
     <Content Include="Views\Visitor\Index.cshtml" />
     <Content Include="Views\Visitor\Details.cshtml" />
     <Content Include="Views\Visitor\Checkin.cshtml" />
+    <Content Include="Views\Keycode\CheckKey.cshtml" />
+    <Content Include="Views\Keycode\Create.cshtml" />
+    <Content Include="Views\Keycode\Index.cshtml" />
+    <Content Include="Views\Keycode\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Keycode\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

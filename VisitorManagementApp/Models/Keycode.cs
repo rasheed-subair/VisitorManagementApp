@@ -28,13 +28,9 @@ namespace VisitorManagementApp.Models
         [DisplayFormat(DataFormatString = "{0:hh:mm tt}", ApplyFormatInEditMode = true)]
         public string AppointmentTime { get; set; }
 
-        [ForeignKey("Admin")]
-        public int AdminId { get; set; }
-
         [ForeignKey("Staff")]
         public int StaffId { get; set; }
 
-        public virtual Admin Admin { get; set; }
         public virtual Staff Staff { get; set; }
     }
 }

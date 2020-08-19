@@ -43,6 +43,5 @@ namespace VisitorManagementApp.Models
         [Required(ErrorMessage = "Office/Meeting Loction is required")]
         public string OfficeLocation { get; set; }
 
-        public virtual ICollection<Keycode> Keycodes { get; set; }
     }
 }
