@@ -32,6 +32,19 @@ namespace VisitorManagementApp.Controllers
 
 
         /***********************************************/
+        /*      Main Homepage page for admin              */
+        /***********************************************/
+        public ActionResult Homepage()
+        {
+            if (Session["StaffId"] != null)
+            {
+                return View();
+            }
+            return RedirectToAction("Login");
+        }
+
+
+        /***********************************************/
         /*        Staff Details viewed By admin        */
         /***********************************************/
         public ActionResult Details(int? id)
@@ -76,7 +89,7 @@ namespace VisitorManagementApp.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "StaffId,Name,Email,Username,Password,Phone,OfficeLocation")] Staff account)
+        public ActionResult Edit([Bind(Include = "StaffId,Name,Email,Username,Password,Phone,Address,OfficeLocation")] Staff account)
         {
             if (ModelState.IsValid)
             {
@@ -142,7 +155,7 @@ namespace VisitorManagementApp.Controllers
                         Session["StaffId"] = mystaff.StaffId.ToString();
                         Session["Username"] = mystaff.Username.ToString();
 
-                        return RedirectToAction("Index");
+                        return RedirectToAction("Homepage");
                     }
                 }
                 catch (Exception)

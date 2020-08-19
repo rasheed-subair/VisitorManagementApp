@@ -31,6 +31,19 @@ namespace VisitorManagementApp.Controllers
         }
 
 
+        /***********************************************/
+        /*      Main Homepage page for admin              */
+        /***********************************************/
+        public ActionResult Homepage()
+        {
+            if (Session["AdminId"] != null)
+            {
+                    return View();
+            }
+            return RedirectToAction("Login");
+        }
+
+
 
         /***********************************************/
         /*        Admin Details viewed By admin        */
@@ -139,7 +152,7 @@ namespace VisitorManagementApp.Controllers
                         Session["AdminId"] = myadmin.AdminId.ToString();
                         Session["Username"] = myadmin.Username.ToString();
 
-                        return RedirectToAction("Index");
+                        return RedirectToAction("Homepage");
                     }
                 }
                 catch (Exception)
