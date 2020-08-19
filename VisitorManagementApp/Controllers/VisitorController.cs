@@ -59,8 +59,6 @@ namespace VisitorManagementApp.Controllers
             return View();
         }
 
-
-
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Checkin([Bind(Include = "VisitorId,FirstName,LastName,Email,Phone,Address,Purpose,TimeIn,TimeOut")] Visitor account)
@@ -71,7 +69,11 @@ namespace VisitorManagementApp.Controllers
                 account.TimeOut = null;
                 db.VisitorTable.Add(account);
                 db.SaveChanges();
-                return RedirectToAction("Success", "Keycode");
+                /*
+                 * Use this instead when success view page is set up
+                 return RedirectToAction("Success", "Keycode");
+                 */
+                return RedirectToAction("Index");
             }
 
             return View();

@@ -192,11 +192,13 @@
     <Content Include="Views\Staff\Delete.cshtml" />
     <Content Include="Views\Admin\Homepage.cshtml" />
     <Content Include="Views\Staff\Homepage.cshtml" />
+    <Content Include="Views\Visitor\Index.cshtml" />
+    <Content Include="Views\Visitor\Details.cshtml" />
+    <Content Include="Views\Visitor\Checkin.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Views\Keycode\" />
-    <Folder Include="Views\Visitor\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
