@@ -78,7 +78,7 @@ namespace VisitorManagementApp.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "AdminId,Name,Email,Username,Password,Phone,OfficeLocation")] Admin account)
+        public ActionResult Edit([Bind(Include = "AdminId,Name,Email,Username,Password,ConfirmPassword,Phone,Address,OfficeLocation")] Admin account)
         {
             if (ModelState.IsValid)
             {
@@ -194,7 +194,7 @@ namespace VisitorManagementApp.Controllers
         }
 
 
-        protected override void Dispose(bool disposing)
+         protected override void Dispose(bool disposing)
         {
             if (disposing)
             {
@@ -202,6 +202,7 @@ namespace VisitorManagementApp.Controllers
             }
             base.Dispose(disposing);
         }
+
 
 
 
