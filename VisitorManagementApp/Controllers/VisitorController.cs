@@ -94,7 +94,9 @@ namespace VisitorManagementApp.Controllers
         }
 
 
-        //Added this - to be edited
+        /***********************************************/
+        /*           Visitor Checkout method           */
+        /***********************************************/
         public ActionResult Checkout(int? id)
         {
             if (id == null)
@@ -118,7 +120,7 @@ namespace VisitorManagementApp.Controllers
                 visitor.TimeOut = DateTime.Now.ToString();
                 db.Entry(visitor).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("CheckoutList");
+                return RedirectToAction("Index", "Home");
             }
             
             return View(visitor);

@@ -17,10 +17,11 @@
             <div id="header-wrapper">
                 <div id="menu" class="container">
                     <ul>
-                        <li><a href="~/Home/Index">Homepage</a></li>
+                        <li><h3><a href="~/Home/Index"><i class="fas fa-fire text-white " aria-hidden="true"></i> Hestia</a></h3></li>
                         <li><a href="~/Admin/Index">Admin List</a></li>
                         <li><a href="~/Staff/Index">Staff List</a></li>
                         <li><a href="~/Visitor/Index">Visitor Log</a></li>
+                        <li>@Html.ActionLink("Logout", "Logout", "Admin")</li>
                     </ul>
                 </div>
                 <!-- end #menu -->

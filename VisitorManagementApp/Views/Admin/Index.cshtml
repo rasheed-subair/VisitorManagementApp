@@ -11,14 +11,6 @@
     @Html.ActionLink("Edit Profile", "Edit", new { id = Session["AdminId"] })
 </h4>
 
-<p>
-    @Html.ActionLink("Logout", "Logout", "Admin")
-</p>
-
-<p>
-    @Html.ActionLink("Create Keycode", "Create", "Keycodes")
-</p>
-
 <table class="table table-hover">
     <tr class="bg-dark text-white">
         <th>
@@ -28,13 +20,7 @@
             @Html.DisplayNameFor(model => model.Email)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Username)
-        </th>
-        <th>
             @Html.DisplayNameFor(model => model.Phone)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Address)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.OfficeLocation)
@@ -52,20 +38,14 @@
                 @Html.DisplayFor(modelItem => item.Email)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Username)
-            </td>
-            <td>
                 @Html.DisplayFor(modelItem => item.Phone)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Address)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.OfficeLocation)
             </td>
             <td>
-                @Html.ActionLink("Details", "Details", new { id = item.AdminId }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.AdminId })
+                @Html.ActionLink("Details", "Details", new { id = item.AdminId }, new { @class = "btn btn-success btn-sm" }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.AdminId }, new { @class = "btn btn-danger btn-sm" })
             </td>
         </tr>
     }

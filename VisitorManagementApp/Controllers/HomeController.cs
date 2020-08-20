@@ -10,6 +10,7 @@ namespace VisitorManagementApp.Controllers
     {
         public ActionResult Index()
         {
+            Session.Clear();
             return View();
         }
 

@@ -5,20 +5,22 @@
     Layout = "~/Views/Shared/_StaffLayout.cshtml";
 }
 
-<h2>Create</h2>
-
 
 @using (Html.BeginForm()) 
 {
     @Html.AntiForgeryToken()
     
-    <div class="form-horizontal">
-        <h4>Keycode</h4>
+    <div class="form-horizontal my-5">
+        <div class="text-center my-5">
+            <h4>Copy this keycode and paste it in the Key input box: { <b>@ViewBag.SampleKey</b> }</h4>
+            <h5 class="text-danger">Please keep this keycode safe as it cannot be retrieved.</h5>
+        </div>
+        
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">
             @Html.LabelFor(model => model.Key, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
+            <div class="col-md-12">
                 @Html.EditorFor(model => model.Key, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.Key, "", new { @class = "text-danger" })
             </div>
@@ -26,7 +28,7 @@
 
         <div class="form-group">
             @Html.LabelFor(model => model.AppointmentDay, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
+            <div class="col-md-12">
                 @Html.EditorFor(model => model.AppointmentDay, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.AppointmentDay, "", new { @class = "text-danger" })
             </div>
@@ -34,7 +36,7 @@
 
         <div class="form-group">
             @Html.LabelFor(model => model.AppointmentTime, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
+            <div class="col-md-12">
                 @Html.EditorFor(model => model.AppointmentTime, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.AppointmentTime, "", new { @class = "text-danger" })
             </div>
@@ -42,7 +44,7 @@
 
         <div class="form-group">
             @Html.LabelFor(model => model.StaffId, "StaffId", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
+            <div class="col-md-12">
                 @Html.DropDownList("StaffId", null, htmlAttributes: new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.StaffId, "", new { @class = "text-danger" })
             </div>

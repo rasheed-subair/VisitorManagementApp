@@ -19,19 +19,7 @@
             @Html.DisplayNameFor(model => model.Email)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Username)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Password)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ConfirmPassword)
-        </th>
-        <th>
             @Html.DisplayNameFor(model => model.Phone)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Address)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.OfficeLocation)
@@ -48,26 +36,14 @@
             @Html.DisplayFor(modelItem => item.Email)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Username)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Password)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ConfirmPassword)
-        </td>
-        <td>
             @Html.DisplayFor(modelItem => item.Phone)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Address)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.OfficeLocation)
         </td>
         <td>
-            @Html.ActionLink("Details", "Details", new { id=item.StaffId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.StaffId })
+            @Html.ActionLink("Details", "Details", new { id=item.StaffId }, new { @class = "btn btn-success btn-sm" })
+            @Html.ActionLink("Delete", "Delete", new { id=item.StaffId }, new { @class = "btn btn-danger btn-sm" })
         </td>
     </tr>
 }

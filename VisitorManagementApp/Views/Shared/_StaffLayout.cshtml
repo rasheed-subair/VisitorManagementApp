@@ -16,8 +16,9 @@
         <div id="header-wrapper">
             <div id="menu" class="container">
                 <ul>
-                    <li><a href="~/Home/Index">Homepage</a></li>
-                    <li><a href="~/Views/Staff/Edit">Edit Profile</a></li>
+                    <li><h3><a href="~/Home/Index"><i class="fas fa-fire text-white " aria-hidden="true"></i> Hestia</a></h3></li>
+                    <li>@Html.ActionLink("Create Appointment", "Create", "Keycode")</li>
+                    <li>@Html.ActionLink("Logout", "Logout", "Staff")</li>
                 </ul>
             </div>
             <!-- end #menu -->

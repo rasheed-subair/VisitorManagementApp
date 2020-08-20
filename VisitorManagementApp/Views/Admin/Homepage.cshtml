@@ -4,37 +4,52 @@
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
-<h2>Admin Homepage</h2>
-
-<h4>
-    @Html.ActionLink("Edit Profile", "Edit", new { id = Session["AdminId"] })
-</h4>
-
+<br />
 <hr />
 
-<h4>
-    @Html.ActionLink("View Visitor Log", "Index", "Visitor")
-</h4>
-
-<hr />
-
-<p>
-    @Html.ActionLink("Create Keycode", "Create", "Keycodes")
-</p>
-
-<hr />
-
-<p>
-    @Html.ActionLink("Create New Staff account", "Registration", "Staff")
-</p>
-
-<hr />
-
-<div>
-    @Html.ActionLink("Back to List", "Index")
+<div class="row mb-4">
+    <div class="col-sm-6">
+        <div class="card bg-light">
+            <div class="card-body">
+                <h5 class="card-title">Edit my profile</h5>
+                <hr />
+                <p class="card-text">Click on the button below to view and edit profile.</p>
+                @Html.ActionLink("Edit Profile", "Edit", new { id = Session["AdminId"] }, new { @class = "btn btn-success" })
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-6">
+        <div class="card bg-light">
+            <div class="card-body">
+                <h5 class="card-title">View Visitor Log</h5>
+                <hr />
+                <p class="card-text">Click on the button below to view the log of all visitors.</p>
+                @Html.ActionLink("View Visitor Log", "Index", "Visitor", null, new { @class = "btn btn-success" })
+            </div>
+        </div>
+    </div>
 </div>
 
+<div class="row">
+    <div class="col-sm-6">
+        <div class="card bg-light">
+            <div class="card-body">
+                <h5 class="card-title">Create Staff Account</h5>
+                <hr />
+                <p class="card-text">Click on the button below to create new account for staff.</p>
+                @Html.ActionLink("Create New Staff", "Registration", "Staff", null, new { @class = "btn btn-success" })
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-6">
+        <div class="card bg-light">
+            <div class="card-body">
+                <h5 class="card-title">Create Admin Account</h5>
+                <hr />
+                <p class="card-text">Click on the button below to create keycode for a new appointment.</p>
+                @Html.ActionLink("Create New Admin", "Registration", "Admin", null, new { @class = "btn btn-success" })
+            </div>
+        </div>
+    </div>
+</div>
 <hr />
-<p>
-    @Html.ActionLink("Logout", "Logout", "Admin")
-</p>
