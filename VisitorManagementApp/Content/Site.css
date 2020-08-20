@@ -373,3 +373,43 @@ a {
     font-size: 1.5rem;
     margin-top: 30px;
 }
+
+
+
+
+
+/* Login page styles - Start */
+.login-flex {
+    height: auto;
+    width: 100vw;
+    /* The next three lines are used to center the div */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login {
+    margin-top: 50px;
+    height: 310px;
+    width: 20em;
+    background-color: #ffffff;
+    border-radius: 7px;
+    box-shadow: 5px 10px 4px rgba(0,0,0,0.2), -10px 15px 3px rgba(0,0,0,0.2);
+}
+
+.login-inputfield {
+    border: none;
+    border-bottom: 2px solid var(--main-blue);
+    border-right: 1px solid var(--main-blue);
+    border-radius: 1.5px;
+    background-color: transparent;
+}
+
+.login-btn {
+    background-color: var(--main-lightblue);
+}
+
+    .login-btn:hover {
+        background-color: var(--main-blue);
+    }
+/* Login page styles - End */
