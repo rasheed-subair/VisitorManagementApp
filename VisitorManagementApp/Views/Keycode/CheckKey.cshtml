@@ -2,42 +2,40 @@
 
 @{
     ViewBag.Title = "CheckKey";
+    Layout = "~/Views/Shared/_SecondLayout.cshtml";
 }
 
-<h2>CheckKey</h2>
 
-@if (ViewBag.Message != null)
-{
-    <div class="alert alert-success">@ViewBag.Message</div>
-    @Html.ActionLink("View Appointment details", "Success", new { id = @Session["StaffId"] })
-}
+<div class="container text-center p-4" id="white-bg">
+    @if (ViewBag.Message != null)
+    {
+        <div class="alert alert-success">@ViewBag.Message</div>
+        @Html.ActionLink("View Appointment details", "Success", new { id = @Session["StaffId"] })
+    }
 
-@using (Html.BeginForm())
-{
-    @Html.AntiForgeryToken()
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
 
-    <div class="form-horizontal">
-        <h4>Keycode</h4>
-        <hr />
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        <div class="form-group">
-            @Html.LabelFor(model => model.Key, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Key, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Key, "", new { @class = "text-danger" })
+        <div class="form-horizontal" align="center">
+            <h4>Keycode Validator</h4>
+            <hr />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div class="form-group">
+                <h5>Enter keycode here</h5>
+                <div class="col-md-6">
+                    @Html.EditorFor(model => model.Key, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Key, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-12">
+                    <input type="submit" value="Check Key" class="btn btn-outline-dark btn-lg" />
+                </div>
             </div>
         </div>
-
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Check Key" class="btn btn-default" />
-            </div>
-        </div>
-    </div>
-}
-
-<div>
-    @Html.ActionLink("Back to List", "Index")
+    }
 </div>
 
 @section Scripts {

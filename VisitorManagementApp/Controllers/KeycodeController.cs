@@ -98,10 +98,7 @@ namespace VisitorManagementApp.Controllers
             return View();
         }
 
-        public ActionResult TestSession()
-        {
-            return View();
-        }
+
 
         /***********************************************/
         /*               Success Method                */

@@ -2,17 +2,19 @@
 
 @{
     ViewBag.Title = "Success";
+    Layout = "~/Views/Shared/_SecondLayout.cshtml";
 }
 
-<h2>Success</h2>
-
 <div>
-    <h4>Appointment Details</h4>
-    <hr />
+    <div class="container p-4" id="white-bg">
+        <h2 class="text-center pt-3">Thank you for Checking in...</h2>
+        <hr>
+        <br>
+        <h4>Your meeting with <b>@Html.DisplayFor(model => model.Staff.Name)</b> is scheduled for <b>@Html.DisplayFor(model => model.AppointmentTime)</b> on <b>@Html.DisplayFor(model => model.AppointmentDay)</b>.</h4>
+        <br>
+        <h4>Please head to this location: <b>@Html.DisplayFor(model => model.Staff.OfficeLocation)</b> at the appointed meeting time.</h4>
 
-    <h2>
-        Your meeting with @Html.DisplayFor(model => model.Staff.Name) is scheduled for @Html.DisplayFor(model => model.AppointmentTime) on @Html.DisplayFor(model => model.AppointmentDay).
-        Please head to this location: @Html.DisplayFor(model => model.Staff.OfficeLocation) at the appointed meeting time.
-    </h2>
 
+        <br> <br> <br>
+    </div>
 </div>

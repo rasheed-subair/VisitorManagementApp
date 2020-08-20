@@ -2,12 +2,45 @@
 
 <html>
 <head>
+    <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
-    <title>@ViewBag.Title</title>
+    <title>Hestia Nig</title>
+    <link href="~/Content/Site.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Public+Sans&display=swap" rel="stylesheet">
+    @Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
-    <div>
-        @RenderBody()
+    <div id="wrapper">
+        <div id="header-wrapper">
+            <div id="menu" class="container">
+                <ul>
+                    <li><a href="~/Home/Index">Homepage</a></li>
+                    <li><a href="~/Views/Staff/Edit">Edit Profile</a></li>
+                </ul>
+            </div>
+            <!-- end #menu -->
+            <div id="header" class="container">
+                <div id="logo">
+                    <h4>Hestia Nigeria Limited</h4>
+                    <p>Edit profile and Create Keycodes</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="container mt-2">
+            @RenderBody()
+        </div>
+
+        <div id="copyright" class="container">
+            <p>&copy; Untitled. All rights reserved.</p>
+
+        </div>
     </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
 </body>
 </html>

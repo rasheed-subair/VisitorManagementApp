@@ -2,6 +2,7 @@
 
 @{
     ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
 <h2>Index</h2>
@@ -18,8 +19,8 @@
     @Html.ActionLink("Create Keycode", "Create", "Keycodes")
 </p>
 
-<table class="table">
-    <tr>
+<table class="table table-hover">
+    <tr class="bg-dark text-white">
         <th>
             @Html.DisplayNameFor(model => model.Name)
         </th>
