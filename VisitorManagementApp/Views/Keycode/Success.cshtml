@@ -13,8 +13,11 @@
         <h4>Your meeting with <b>@Html.DisplayFor(model => model.Staff.Name)</b> is scheduled for <b>@Html.DisplayFor(model => model.AppointmentTime)</b> on <b>@Html.DisplayFor(model => model.AppointmentDay)</b>.</h4>
         <br>
         <h4>Please head to this location: <b>@Html.DisplayFor(model => model.Staff.OfficeLocation)</b> at the appointed meeting time.</h4>
-
-
-        <br> <br> <br>
+        <br>
+        <div align="center">
+            @Html.ActionLink("Close", "Index", "Home", null, new { @class = "btn btn-danger btn-lg" })
+        </div>
+        
+        <br> <br>
     </div>
 </div>
