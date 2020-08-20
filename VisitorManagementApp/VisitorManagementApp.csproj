@@ -199,6 +199,8 @@
     <Content Include="Views\Keycode\Create.cshtml" />
     <Content Include="Views\Keycode\Index.cshtml" />
     <Content Include="Views\Keycode\Delete.cshtml" />
+    <Content Include="Views\Visitor\CheckoutList.cshtml" />
+    <Content Include="Views\Visitor\Checkout.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

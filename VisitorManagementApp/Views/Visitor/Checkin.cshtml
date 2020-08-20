@@ -6,11 +6,16 @@
 
 <h2>Checkin</h2>
 
+@if (ViewBag.Message != null)
+{
+    <div class="alert alert-success">@ViewBag.Message</div>
+    <h5>@Html.ActionLink("Checkout Here", "CheckoutList", "Visitor")</h5>
+}
 
-@using (Html.BeginForm()) 
+@using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
         <h4>Visitor</h4>
         <hr />
