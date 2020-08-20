@@ -1,0 +1,18 @@
+﻿@model VisitorManagementApp.Models.Keycode
+
+@{
+    ViewBag.Title = "Success";
+}
+
+<h2>Success</h2>
+
+<div>
+    <h4>Appointment Details</h4>
+    <hr />
+
+    <h2>
+        Your meeting with @Html.DisplayFor(model => model.Staff.Name) is scheduled for @Html.DisplayFor(model => model.AppointmentTime) on @Html.DisplayFor(model => model.AppointmentDay).
+        Please head to this location: @Html.DisplayFor(model => model.Staff.OfficeLocation) at the appointed meeting time.
+    </h2>
+
+</div>

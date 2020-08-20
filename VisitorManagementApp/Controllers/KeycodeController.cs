@@ -39,7 +39,6 @@ namespace VisitorManagementApp.Controllers
                 ViewBag.StaffId = new SelectList(db.StaffTable, "StaffId", "Name");
                 return View();
             }
-            //You need to change this to Index method Home controller later
             return RedirectToAction("Login", "Staff");
 
         }
@@ -88,7 +87,7 @@ namespace VisitorManagementApp.Controllers
                         /*
                          return RedirectToAction("Success");
                          */
-
+                        return RedirectToAction("Checkin", "Visitor");
                     }
                 }
                 catch (Exception)
@@ -99,14 +98,28 @@ namespace VisitorManagementApp.Controllers
             return View();
         }
 
-
+        public ActionResult TestSession()
+        {
+            return View();
+        }
 
         /***********************************************/
         /*               Success Method                */
         /***********************************************/
-        public ActionResult Success()
+        public ActionResult Success(string id)
         {
-            return View();
+            int? myid = Int16.Parse(id);
+            if (myid == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Keycode account = db.KeycodeTable.Find(myid);
+            if (account == null)
+            {
+                return HttpNotFound();
+            }
+            Session.Clear();
+            return View(account);
         }
 
 

@@ -1,0 +1,13 @@
+﻿@model IEnumerable<VisitorManagementApp.Models.Keycode>
+
+@{
+    ViewBag.Title = "TestSession";
+}
+
+You should get the staff id below:
+<br />
+
+@Session["StaffId"];
+
+Your meeting host is: 
+@Html.DisplayNameFor(model => model.Staff.Name)

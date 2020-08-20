@@ -14,6 +14,7 @@ namespace VisitorManagementApp.Controllers
     {
         private CompanyContext db = new CompanyContext();
 
+
         /***********************************************/
         /*         Visitor Log viewed By admin         */
         /***********************************************/

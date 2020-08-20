@@ -201,6 +201,8 @@
     <Content Include="Views\Keycode\Delete.cshtml" />
     <Content Include="Views\Visitor\CheckoutList.cshtml" />
     <Content Include="Views\Visitor\Checkout.cshtml" />
+    <Content Include="Views\Keycode\TestSession.cshtml" />
+    <Content Include="Views\Keycode\Success.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

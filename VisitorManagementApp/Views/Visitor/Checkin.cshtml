@@ -9,7 +9,11 @@
 @if (ViewBag.Message != null)
 {
     <div class="alert alert-success">@ViewBag.Message</div>
-    <h5>@Html.ActionLink("Checkout Here", "CheckoutList", "Visitor")</h5>
+    
+    <h5>
+        @Html.ActionLink("View Appointment details", "Success", "Keycode", new { id = @Session["StaffId"] }, null)
+        @Html.ActionLink("Checkout Here", "CheckoutList", "Visitor")
+    </h5>
 }
 
 @using (Html.BeginForm())
