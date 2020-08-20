@@ -24,6 +24,7 @@ namespace VisitorManagementApp.Models
         public string Username { get; set; }
 
         [Required(ErrorMessage = "Password is required")]
+        [StringLength(50, MinimumLength = 8, ErrorMessage = "Password must be longer than 8 characters")]
         [DataType(DataType.Password)]
         public string Password { get; set; }
 
@@ -34,7 +35,7 @@ namespace VisitorManagementApp.Models
         public string ConfirmPassword { get; set; }
 
         [Required(ErrorMessage = "Phone number is required")]
-        public int Phone { get; set; }
+        public string Phone { get; set; }
 
         [Required(ErrorMessage = " Home Address is required")]
         public string Address { get; set; }

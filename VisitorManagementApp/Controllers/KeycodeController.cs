@@ -144,7 +144,6 @@ namespace VisitorManagementApp.Controllers
             return RedirectToAction("Login", "Admin");
         }
 
-        // POST: Keycodes/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)

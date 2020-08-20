@@ -24,7 +24,7 @@ namespace VisitorManagementApp.Models
         public string Email { get; set; }
 
         [Required(ErrorMessage = "Phone number is required")]
-        public int Phone { get; set; }
+        public string Phone { get; set; }
 
         public string Address { get; set; }
 

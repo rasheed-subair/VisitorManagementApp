@@ -48,7 +48,7 @@ namespace VisitorManagementApp.Controllers
 
         /***********************************************/
         /*           Visitor Checkout List             */
-        /***********************************************/    //Added this
+        /***********************************************/
         public ActionResult CheckoutList(string sortOrder, string searchString)
         {
             ViewBag.NameSortParm = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
@@ -113,13 +113,9 @@ namespace VisitorManagementApp.Controllers
                 account.TimeOut = null;
                 db.VisitorTable.Add(account);
                 db.SaveChanges();
-                /*
-                 * Use this instead when success view page is set up
-                 return RedirectToAction("Success", "Keycode");
-                 */
+                
                 ModelState.Clear();
                 ViewBag.Message = "You have checked in successfully.";
-                
             }
 
             return View();

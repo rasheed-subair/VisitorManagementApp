@@ -4,79 +4,89 @@
     ViewBag.Title = "Details";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
-
+<br />
 <h2>Details</h2>
 
 <div>
-    <h4>Visitor</h4>
+    
     <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.FirstName)
-        </dt>
+    <div class="container">
 
-        <dd>
-            @Html.DisplayFor(model => model.FirstName)
-        </dd>
+        <div class="row">
+            <div class="col-md-3">
+                <h4>@Html.DisplayNameFor(model => model.FirstName):</h4>
+            </div>
+            <div class="col-md-9">
+                <h5>@Html.DisplayFor(model => model.FirstName)</h5>
+            </div>
+        </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.LastName)
-        </dt>
+        <div class="row">
+            <div class="col-md-3">
+                <h4>@Html.DisplayNameFor(model => model.LastName):</h4>
+            </div>
+            <div class="col-md-9">
+                <h5>@Html.DisplayFor(model => model.LastName)</h5>
+            </div>
+        </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.LastName)
-        </dd>
+        <div class="row">
+            <div class="col-md-3">
+                <h4>@Html.DisplayNameFor(model => model.Email):</h4>
+            </div>
+            <div class="col-md-9">
+                <h5>@Html.DisplayFor(model => model.Email)</h5>
+            </div>
+        </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Email)
-        </dt>
+        <div class="row">
+            <div class="col-md-3">
+                <h4>@Html.DisplayNameFor(model => model.Phone):</h4>
+            </div>
+            <div class="col-md-9">
+                <h5>@Html.DisplayFor(model => model.Phone)</h5>
+            </div>
+        </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.Email)
-        </dd>
+        <div class="row">
+            <div class="col-md-3">
+                <h4>@Html.DisplayNameFor(model => model.Address):</h4>
+            </div>
+            <div class="col-md-9">
+                <h5>@Html.DisplayFor(model => model.Address)</h5>
+            </div>
+        </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Phone)
-        </dt>
+        <div class="row">
+            <div class="col-md-3">
+                <h4>@Html.DisplayNameFor(model => model.Purpose):</h4>
+            </div>
+            <div class="col-md-9">
+                <h5>@Html.DisplayFor(model => model.Purpose)</h5>
+            </div>
+        </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.Phone)
-        </dd>
+        <div class="row">
+            <div class="col-md-3">
+                <h4>@Html.DisplayNameFor(model => model.TimeIn):</h4>
+            </div>
+            <div class="col-md-9">
+                <h5>@Html.DisplayFor(model => model.TimeIn)</h5>
+            </div>
+        </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Address)
-        </dt>
+        <div class="row">
+            <div class="col-md-3">
+                <h4>@Html.DisplayNameFor(model => model.TimeOut):</h4>
+            </div>
+            <div class="col-md-9">
+                <h5>@Html.DisplayFor(model => model.TimeOut)</h5>
+            </div>
+        </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.Address)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Purpose)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Purpose)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.TimeIn)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.TimeIn)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.TimeOut)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.TimeOut)
-        </dd>
-
-    </dl>
+    </div>
 </div>
-<p>
-    @Html.ActionLink("Back to List", "Index")
-</p>
+<br />
+<h5>
+    @Html.ActionLink("Back to List", "Index", "Visitor")
+</h5>

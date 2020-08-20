@@ -4,64 +4,70 @@
     ViewBag.Title = "Details";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
-
+<br />
 <h2>Details</h2>
 
 <div>
-    <h4>Admin</h4>
     <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Name)
-        </dt>
+    <div class="container">
 
-        <dd>
-            @Html.DisplayFor(model => model.Name)
-        </dd>
+        <div class="row">
+            <div class="col-md-3">
+                <h4>@Html.DisplayNameFor(model => model.Name):</h4>
+            </div>
+            <div class="col-md-9">
+                <h5>@Html.DisplayFor(model => model.Name)</h5>
+            </div>
+        </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Email)
-        </dt>
+        <div class="row">
+            <div class="col-md-3">
+                <h4>@Html.DisplayNameFor(model => model.Email):</h4>
+            </div>
+            <div class="col-md-9">
+                <h5>@Html.DisplayFor(model => model.Email)</h5>
+            </div>
+        </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.Email)
-        </dd>
+        <div class="row">
+            <div class="col-md-3">
+                <h4>@Html.DisplayNameFor(model => model.Username):</h4>
+            </div>
+            <div class="col-md-9">
+                <h5>@Html.DisplayFor(model => model.Username)</h5>
+            </div>
+        </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Username)
-        </dt>
+        <div class="row">
+            <div class="col-md-3">
+                <h4>@Html.DisplayNameFor(model => model.Phone):</h4>
+            </div>
+            <div class="col-md-9">
+                <h5>@Html.DisplayFor(model => model.Phone)</h5>
+            </div>
+        </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.Username)
-        </dd>
+        <div class="row">
+            <div class="col-md-3">
+                <h4>@Html.DisplayNameFor(model => model.Address):</h4>
+            </div>
+            <div class="col-md-9">
+                <h5>@Html.DisplayFor(model => model.Address)</h5>
+            </div>
+        </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Phone)
-        </dt>
+        <div class="row">
+            <div class="col-md-3">
+                <h4>@Html.DisplayNameFor(model => model.OfficeLocation):</h4>
+            </div>
+            <div class="col-md-9">
+                <h5>@Html.DisplayFor(model => model.OfficeLocation)</h5>
+            </div>
+        </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.Phone)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Address)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Address)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.OfficeLocation)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.OfficeLocation)
-        </dd>
-
-    </dl>
+    </div>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.AdminId }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+<br />
+<h5>
+    @Html.ActionLink("Back to List", "Index", "Admin")
+</h5>
