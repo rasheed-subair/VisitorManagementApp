@@ -18,12 +18,28 @@ namespace VisitorManagementApp.Controllers
         /***********************************************/
         /*         Visitor Log viewed By admin         */
         /***********************************************/
-        public ActionResult Index()
+        public ActionResult Index(string sortOrder, string searchString)
         {
             if (Session["AdminId"] != null)
             {
-                var visitor = db.VisitorTable.ToList();
-                return View(visitor);
+                ViewBag.NameSortParm = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
+                var visitors = from s in db.VisitorTable
+                             select s;
+                if (!String.IsNullOrEmpty(searchString))
+                {
+                    visitors = visitors.Where(s => s.LastName.Contains(searchString)
+                                           || s.FirstName.Contains(searchString));
+                }
+                switch (sortOrder)
+                {
+                    case "name_desc":
+                        visitors = visitors.OrderByDescending(s => s.FirstName);
+                        break;
+                    default:
+                        visitors = visitors.OrderBy(s => s.FirstName);
+                        break;
+                }
+                return View(visitors.ToList());
             }
             return RedirectToAction("Login", "Admin");
         }
@@ -33,10 +49,26 @@ namespace VisitorManagementApp.Controllers
         /***********************************************/
         /*           Visitor Checkout List             */
         /***********************************************/    //Added this
-        public ActionResult CheckoutList()
+        public ActionResult CheckoutList(string sortOrder, string searchString)
         {
-            var visitor = db.VisitorTable.ToList();
-            return View(visitor);
+            ViewBag.NameSortParm = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
+            var visitors = from s in db.VisitorTable
+                           select s;
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                visitors = visitors.Where(s => s.LastName.Contains(searchString)
+                                       || s.FirstName.Contains(searchString));
+            }
+            switch (sortOrder)
+            {
+                case "name_desc":
+                    visitors = visitors.OrderByDescending(s => s.FirstName);
+                    break;
+                default:
+                    visitors = visitors.OrderBy(s => s.FirstName);
+                    break;
+            }
+            return View(visitors.ToList());
         }
 
 

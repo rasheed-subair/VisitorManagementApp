@@ -17,14 +17,29 @@ namespace VisitorManagementApp.Controllers
         /***********************************************/
         /*      Main index page for Staff              */
         /***********************************************/
-        public ActionResult Index()
+        public ActionResult Index(string sortOrder, string searchString)
         {
             if (Session["AdminId"] != null)
             {
                 using (CompanyContext db = new CompanyContext())
                 {
-                    var staff = db.StaffTable.ToList();
-                    return View(staff);
+                    ViewBag.NameSortParm = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
+                    var staffs = from s in db.StaffTable
+                                 select s;
+                    if (!String.IsNullOrEmpty(searchString))
+                    {
+                        staffs = staffs.Where(s => s.Name.Contains(searchString));
+                    }
+                    switch (sortOrder)
+                    {
+                        case "name_desc":
+                            staffs = staffs.OrderByDescending(s => s.Name);
+                            break;
+                        default:
+                            staffs = staffs.OrderBy(s => s.Name);
+                            break;
+                    }
+                    return View(staffs.ToList());
                 }
             }
             return RedirectToAction("Login", "Admin");

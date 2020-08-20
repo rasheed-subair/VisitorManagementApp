@@ -17,14 +17,29 @@ namespace VisitorManagementApp.Controllers
         /***********************************************/
         /*      Main index page for admin              */
         /***********************************************/
-        public ActionResult Index()
+        public ActionResult Index(string sortOrder, string searchString)
         {
             if (Session["AdminId"] != null)
             {
                 using (CompanyContext db = new CompanyContext())
                 {
-                    var admin = db.AdminTable.ToList();
-                    return View(admin);
+                    ViewBag.NameSortParm = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
+                    var admins = from s in db.AdminTable
+                                   select s;
+                    if (!String.IsNullOrEmpty(searchString))
+                    {
+                        admins = admins.Where(s => s.Name.Contains(searchString));
+                    }
+                    switch (sortOrder)
+                    {
+                        case "name_desc":
+                            admins = admins.OrderByDescending(s => s.Name);
+                            break;
+                        default:
+                            admins = admins.OrderBy(s => s.Name);
+                            break;
+                    }
+                    return View(admins.ToList());
                 }
             }
             return RedirectToAction("Login");
