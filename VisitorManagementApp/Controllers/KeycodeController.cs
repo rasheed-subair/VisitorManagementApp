@@ -95,7 +95,7 @@ namespace VisitorManagementApp.Controllers
                 }
                 catch (Exception)
                 {
-                    ModelState.AddModelError("", "Keycode is incorrect, Please try again...");
+                    ModelState.AddModelError("", "");
                 }
             }
             return View();

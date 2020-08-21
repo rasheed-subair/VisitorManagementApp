@@ -5,12 +5,14 @@
     Layout = "~/Views/Shared/_SecondLayout.cshtml";
 }
 
-<div class="container text-center p-4" id="white-bg">
-
+<div class="container text-center p-2" id="white-bg">
+    <div class="text-dark">
+        <h1 class="display-4 text-dark" id="welcome">Thank you for visiting...</h1>
+    </div>
+    
     @using (Html.BeginForm())
     {
         @Html.AntiForgeryToken()
-    
         <div class="form-horizontal">
             @Html.ValidationSummary(true, "", new { @class = "text-danger" })
             @Html.HiddenFor(model => model.VisitorId)
@@ -32,11 +34,11 @@
 
                 @Html.EditorFor(model => model.TimeOut, new { htmlAttributes = new { @class = "form-control" } })
             </div>
-               
+
 
             <div class="form-group">
                 <div class="col-md-offset-2 col-md-12">
-                    <input type="submit" value="Checkout" class="btn btn-outline-dark btn-lg" id="mybutton"/>
+                    <input type="submit" value="Checkout" class="btn btn-success btn-lg mb-5" id="mybutton" />
                 </div>
             </div>
         </div>
