@@ -6,16 +6,16 @@
 }
 
 
-@using (Html.BeginForm()) 
+@using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal my-5">
         <div class="text-center my-5">
-            <h4>Copy this keycode and paste it in the Key input box: { <b>@ViewBag.SampleKey</b> }</h4>
+            <h4>Copy this keycode and paste it in the Key input box: <b><span class="text-primary">@ViewBag.SampleKey</span></b></h4>
             <h5 class="text-danger">Please keep this keycode safe as it cannot be retrieved.</h5>
         </div>
-        
+
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">
@@ -26,19 +26,25 @@
             </div>
         </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.AppointmentDay, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-12">
-                @Html.EditorFor(model => model.AppointmentDay, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.AppointmentDay, "", new { @class = "text-danger" })
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    @Html.LabelFor(model => model.AppointmentDay, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-12">
+                        @Html.EditorFor(model => model.AppointmentDay, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.AppointmentDay, "", new { @class = "text-danger" })
+                    </div>
+                </div>
             </div>
-        </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.AppointmentTime, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-12">
-                @Html.EditorFor(model => model.AppointmentTime, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.AppointmentTime, "", new { @class = "text-danger" })
+            <div class="col-md-6">
+                <div class="form-group">
+                    @Html.LabelFor(model => model.AppointmentTime, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-12">
+                        @Html.EditorFor(model => model.AppointmentTime, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.AppointmentTime, "", new { @class = "text-danger" })
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -59,7 +65,7 @@
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Back to Homepage", "Homepage")
 </div>
 
 @section Scripts {
