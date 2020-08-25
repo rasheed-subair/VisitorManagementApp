@@ -57,7 +57,7 @@ namespace VisitorManagementApp.Controllers
 
                 ModelState.Clear();
 
-                ViewBag.Message = "New Keycode Successfully Registered";
+                ViewBag.Message = "New Keycode Successfully Created";
             }
 
             ViewBag.StaffId = new SelectList(db.StaffTable, "StaffId", "Name", keycode.StaffId);

@@ -5,6 +5,10 @@
     Layout = "~/Views/Shared/_StaffLayout.cshtml";
 }
 
+@if (ViewBag.Message != null)
+{
+    <div class="alert alert-success">@ViewBag.Message</div>
+}
 
 @using (Html.BeginForm())
 {

@@ -58,6 +58,7 @@ namespace VisitorManagementApp.Controllers
             {
                 visitors = visitors.Where(s => s.LastName.Contains(searchString)
                                        || s.FirstName.Contains(searchString));
+                ViewBag.Checker = "Searchfound";
             }
             switch (sortOrder)
             {

@@ -7,71 +7,81 @@
 
 <div class="container p-4" id="white-bg">
 
-    <div class="container" align="right">
+
+    <div class="container my-3" align="center">
+        <h4 class="text-center my-5">Please type in your name below to checkout.</h4>
         @using (Html.BeginForm())
         {
-                @Html.TextBox("SearchString",null,  new { @class = "form-control col-md-4 mb-2", placeholder= "Search by name" })
-                <input type="submit" value="Search" class="btn btn-secondary btn-lg mb-3"/>
+            <input type="text" name="searchstring" value=""
+                   placeholder="Search by name..." class="form-control col-md-12 my-5 text-center"
+                   style="height: 60px; border-radius: 35px; font-size: 1.3em;" />
+            <input type="submit" value="Search" class="btn btn-secondary btn-lg mb-3" style=" width:120px; border-radius: 30px;" />
         }
     </div>
-    
 
-    <table class="table table-hover">
-        <tr class="bg-dark text-white">
-            <th>
-                @Html.DisplayNameFor(model => model.FirstName)
-                @Html.ActionLink("<>", "Index", new { sortOrder = ViewBag.NameSortParm }, new { @class = "text-decoration-none text-white" })
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.LastName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Phone)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Purpose)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.TimeIn)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.TimeOut)
-            </th>
-            <th></th>
-        </tr>
-
-        @foreach (var item in Model)
-        {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.FirstName)
-                    
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.LastName)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Phone)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Purpose)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.TimeIn)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.TimeOut)
-                </td>
-                <td>
-                    @*
-                        @Html.ActionLink("Edit", "Edit", new { id = item.VisitorId }) |
-                    *@
-                    @Html.ActionLink("Checkout", "Checkout", new { id = item.VisitorId }, new { @class = "btn btn-danger btn-sm" })
-                </td>
+    @if (ViewBag.Checker != null)
+    {
+        <table class="table table-hover">
+            <tr class="bg-dark text-white">
+                <th>
+                    @Html.DisplayNameFor(model => model.FirstName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.LastName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Phone)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Purpose)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.TimeIn)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.TimeOut)
+                </th>
+                <th></th>
             </tr>
-        }
 
-    </table>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.FirstName)
+
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.LastName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Phone)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Purpose)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TimeIn)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TimeOut)
+                    </td>
+                    <td>
+                        @*
+                            @Html.ActionLink("Edit", "Edit", new { id = item.VisitorId }) |
+                        *@
+                        @Html.ActionLink("Checkout", "Checkout", new { id = item.VisitorId }, new { @class = "btn btn-danger btn-sm" })
+                    </td>
+                </tr>
+            }
+
+        </table>
+    }
+    else
+    {
+        @ViewBag.Checker
+    }
+
 </div>
 
 
