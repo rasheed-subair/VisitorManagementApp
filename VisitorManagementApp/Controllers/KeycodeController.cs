@@ -37,7 +37,7 @@ namespace VisitorManagementApp.Controllers
             if (Session["StaffId"] != null)
             {
                 string sample = Guid.NewGuid().ToString();
-                ViewBag.SampleKey = sample.Substring(0, 9);
+                ViewBag.SampleKey = sample.Substring(0, 8);
 
                 ViewBag.StaffId = new SelectList(db.StaffTable, "StaffId", "Name");
                 return View();

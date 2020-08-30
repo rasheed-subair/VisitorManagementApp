@@ -172,7 +172,7 @@ namespace VisitorManagementApp.Controllers
                 }
                 catch (Exception)
                 {
-                    ModelState.AddModelError("", "Username or Password is invalid.");
+                    ModelState.AddModelError("", "");
                 }
             }
             return View();

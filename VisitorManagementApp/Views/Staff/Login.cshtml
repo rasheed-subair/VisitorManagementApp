@@ -18,7 +18,7 @@
                     @Html.AntiForgeryToken()
 
                     <div class="form-horizontal">
-                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                        @Html.ValidationSummary(true, "Username or Password is invalid.", new { @class = "text-danger" })
 
                         <div class="input-group mb-3">
                             <div class="input-group-prepend">
