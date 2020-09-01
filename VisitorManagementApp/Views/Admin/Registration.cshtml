@@ -93,11 +93,8 @@
 
 <p>
     I have an account!
-    @Html.ActionLink("Login Here", "Login")
+    @Html.ActionLink("Login Here", "Login", null, new { @class = "btn btn-outline-dark" })
 </p>
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")

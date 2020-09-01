@@ -37,8 +37,8 @@
             @Html.DisplayFor(modelItem => item.AppointmentTime)
         </td>
         <td>
-            @Html.ActionLink("Details", "Details", new { id=item.KeycodeId })
-            @Html.ActionLink("Delete", "Delete", new { id=item.KeycodeId })
+            @Html.ActionLink("Details", "Details", new { id=item.KeycodeId }, new { @class = "btn btn-success btn-sm" })
+            @Html.ActionLink("Delete", "Delete", new { id=item.KeycodeId }, new { @class = "btn btn-danger btn-sm" })
         </td>
     </tr>
 }

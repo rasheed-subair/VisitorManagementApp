@@ -124,7 +124,11 @@ namespace VisitorManagementApp.Controllers
         /***********************************************/
         public ActionResult Registration()
         {
-            return View();
+            if (Session["AdminId"] != null)
+            {
+                return View();
+            }
+            return RedirectToAction("Login");
         }
 
         [HttpPost]

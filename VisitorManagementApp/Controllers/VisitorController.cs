@@ -110,7 +110,7 @@ namespace VisitorManagementApp.Controllers
         {
             if (ModelState.IsValid)
             {
-                account.TimeIn = DateTime.Now.ToString();
+                account.TimeIn = DateTime.Now.ToString("f");
                 account.TimeOut = null;
                 db.VisitorTable.Add(account);
                 db.SaveChanges();
@@ -146,7 +146,7 @@ namespace VisitorManagementApp.Controllers
         {
             if (ModelState.IsValid)
             {
-                visitor.TimeOut = DateTime.Now.ToString();
+                visitor.TimeOut = DateTime.Now.ToString("f");
                 db.Entry(visitor).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index", "Home");
