@@ -84,7 +84,7 @@ namespace VisitorManagementApp.Controllers
                     var mykey = db.KeycodeTable.Single(k => k.Key == visitorkey.Key);
                     if (mykey != null)
                     {
-                        Session["StaffId"] = mykey.StaffId.ToString();
+                        Session["StaffId"] = mykey.KeycodeId.ToString();
 
                         ViewBag.Message = "Keycode is correct. Welcome to Hestia Nig. Ltd.";
                         /*
@@ -106,14 +106,13 @@ namespace VisitorManagementApp.Controllers
         /***********************************************/
         /*               Success Method                */
         /***********************************************/
-        public ActionResult Success(string id)
+        public ActionResult Success(int? id)
         {
-            int? myid = Int16.Parse(id);
-            if (myid == null)
+            if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Keycode account = db.KeycodeTable.Find(myid);
+            Keycode account = db.KeycodeTable.Find(id);
             if (account == null)
             {
                 return HttpNotFound();
